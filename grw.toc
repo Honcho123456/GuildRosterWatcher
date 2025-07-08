@@ -1,0 +1,8 @@
+## Interface: 11200
+## Title: GRW - Guild Roster Watcher
+## Notes: Detects added/removed guild members with manual control.
+## Author: YourName
+## Version: 1.0
+## SavedVariablesPerCharacter: GRW_DB
+
+grw.lua
