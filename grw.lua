@@ -18,7 +18,9 @@ end
 -- Capture current guild members into a table
 local function GetCurrentGuildMembers()
     local members = {}
+	
     local totalMembers = GetNumGuildMembers()
+	
     DebugPrint("Scanning guild roster: " .. totalMembers .. " total members")
     for i = 1, totalMembers do
         local name = GetGuildRosterInfo(i)
@@ -60,6 +62,14 @@ local function CompareGuildRoster()
     end
 end
 
+local function EnsureShowOffline()
+    if SetGuildRosterShowOffline and GetGuildRosterShowOffline then
+        if not GetGuildRosterShowOffline() then
+            SetGuildRosterShowOffline(true)
+        end
+    end
+end
+
 -- Event handler
 local function OnEvent()
     if event == "ADDON_LOADED" and arg1 == addonName then
@@ -87,10 +97,12 @@ SlashCmdList["GRW"] = function(args)
    if args == "write" then
         DebugPrint("Requesting roster to save current members...")
         pendingAction = "write"
+		EnsureShowOffline()
         GuildRoster()
     elseif args == "check" then
         DebugPrint("Requesting roster to compare members...")
         pendingAction = "check"
+		EnsureShowOffline()
         GuildRoster()
     else
         DebugPrint("Usage:")
