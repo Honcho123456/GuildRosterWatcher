@@ -97,12 +97,12 @@ SlashCmdList["GRW"] = function(args)
    if args == "write" then
         DebugPrint("Requesting roster to save current members...")
         pendingAction = "write"
-		EnsureShowOffline()
+	EnsureShowOffline()
         GuildRoster()
     elseif args == "check" then
         DebugPrint("Requesting roster to compare members...")
         pendingAction = "check"
-		EnsureShowOffline()
+	EnsureShowOffline()
         GuildRoster()
     else
         DebugPrint("Usage:")
