@@ -1,4 +1,4 @@
-local addonName = "GRW"
+local addonName = "grw"
 GRW_DB = GRW_DB or {}
 local previousMembers = {}
 local pendingAction = nil
