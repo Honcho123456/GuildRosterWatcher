@@ -2,7 +2,7 @@
 ## Title: GRW - Guild Roster Watcher
 ## Notes: Detects added/removed guild members with manual control.
 ## Author: Brissias / bananas Tel abim
-## Version: 1.0
+## Version: 1.0.1
 ## SavedVariablesPerCharacter: GRW_DB
 
 grw.lua
